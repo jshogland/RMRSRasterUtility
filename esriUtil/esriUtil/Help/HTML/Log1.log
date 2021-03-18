@@ -1,0 +1,23 @@
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling c:\Documents and Settings\jshogland\My Documents\JOHN\projects\generic_code_libraries\esriUtil\esriUtil\esriUtil\Help\RmrsRasterUtilitiesToolbarHelp.chm
+
+HHC6000: Error: An internal file could not be created. Make certain there is enough disk space on the drive where you are compiling your file.
+HHC5007: Error: Fatal navigational compilation error. This is likely the result of an invalid contents (.hhc) file.
+
+
+The following files were not compiled:
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling c:\Documents and Settings\jshogland\My Documents\JOHN\projects\generic_code_libraries\esriUtil\esriUtil\esriUtil\Help\RmrsRasterUtilitiesToolbarHelp.chm
+
+
+Compile time: 0 minutes, 0 seconds
+1	Topic
+2	Local links
+0	Internet links
+0	Graphics
+
+
+Created c:\Documents and Settings\jshogland\My Documents\JOHN\projects\generic_code_libraries\esriUtil\esriUtil\esriUtil\Help\RmrsRasterUtilitiesToolbarHelp.chm, 10,847 bytes
+Compression increased file by 9,746 bytes.

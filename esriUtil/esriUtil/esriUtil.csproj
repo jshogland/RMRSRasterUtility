@@ -1,0 +1,1644 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{700BAE53-E86B-423A-A894-DFD1E014B611}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>esriUtil</RootNamespace>
+    <AssemblyName>esriUtil</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>false</Optimize>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DebugSymbols>true</DebugSymbols>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accord, Version=2.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\accord\bin\Release (3.5)\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning">
+      <HintPath>..\..\..\accord\bin\Release (3.5)\Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning.GPL">
+      <HintPath>..\..\..\accord\bin\Release (3.5)\GPL\Accord.MachineLearning.GPL.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math, Version=2.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\accord\bin\Release (3.5)\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Neuro">
+      <HintPath>..\..\..\accord\bin\Release (3.5)\Accord.Neuro.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics, Version=2.8.2.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\accord\bin\Release (3.5)\Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge">
+      <HintPath>..\..\..\accord\Externals\AForge.NET\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math">
+      <HintPath>..\..\..\accord\Externals\AForge.NET\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Neuro">
+      <HintPath>..\..\..\accord\Externals\AForge.NET\AForge.Neuro.dll</HintPath>
+    </Reference>
+    <Reference Include="alglibnet2">
+      <HintPath>..\..\..\alglib\alglibnet2.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ArcMap, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ArcMapUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Catalog, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.CatalogUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ConversionTools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataManagementTools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesNetCDF, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesOleDB, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoAnalyst, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseDistributed, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseExtensions, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessing, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoprocessingUI, Version=10.1.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessor, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GISClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Server, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SpatialAnalyst, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SpatialAnalystTools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.1.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Chart Controls\Assemblies\System.Windows.Forms.DataVisualization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="adjustCoregistrationErrors.cs" />
+    <Compile Include="bootStrapping.cs" />
+    <Compile Include="Forms\Lidar\frmCalcCloudMetrics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lidar\frmCalcCloudMetrics.Designer.cs">
+      <DependentUpon>frmCalcCloudMetrics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lidar\frmCalcGridMetricsFusion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lidar\frmCalcGridMetricsFusion.Designer.cs">
+      <DependentUpon>frmCalcGridMetricsFusion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lidar\frmConvertGridMetricsToRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lidar\frmConvertGridMetricsToRaster.Designer.cs">
+      <DependentUpon>frmConvertGridMetricsToRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lidar\frmCreateDtmFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lidar\frmCreateDtmFiles.Designer.cs">
+      <DependentUpon>frmCreateDtmFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lidar\frmFilterLas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lidar\frmFilterLas.Designer.cs">
+      <DependentUpon>frmFilterLas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lidar\frmRemoveSpaces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lidar\frmRemoveSpaces.Designer.cs">
+      <DependentUpon>frmRemoveSpaces.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmRunBatchInParallel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmRunBatchInParallel.Designer.cs">
+      <DependentUpon>frmRunBatchInParallel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSetStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSetStatistics.Designer.cs">
+      <DependentUpon>frmSetStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="batchCalculations.cs" />
+    <Compile Include="Forms\FIA\frmFiaSummarizePoly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FIA\frmFiaSummarizePoly.Designer.cs">
+      <DependentUpon>frmFiaSummarizePoly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FIA\frmGroupSpecies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FIA\frmGroupSpecies.Designer.cs">
+      <DependentUpon>frmGroupSpecies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAttributeQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAttributeQuery.Designer.cs">
+      <DependentUpon>frmAttributeQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmHelper.cs" />
+    <Compile Include="Forms\FrmNecCdfAttributeSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmNecCdfAttributeSelection.Designer.cs">
+      <DependentUpon>FrmNecCdfAttributeSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MapServices\frmDownloadMapServiceLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MapServices\frmDownloadMapServiceLayer.Designer.cs">
+      <DependentUpon>frmDownloadMapServiceLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmCreateAttributeTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmCreateAttributeTable.Designer.cs">
+      <DependentUpon>frmCreateAttributeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmLocalBinTimeRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmLocalBinTimeRaster.Designer.cs">
+      <DependentUpon>frmLocalBinTimeRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmNDVIRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmNDVIRaster.Designer.cs">
+      <DependentUpon>frmNDVIRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmNormalize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmNormalize.Designer.cs">
+      <DependentUpon>frmNormalize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmPhotoAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmPhotoAnalysis.Designer.cs">
+      <DependentUpon>frmPhotoAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmResampleRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmResampleRaster.Designer.cs">
+      <DependentUpon>frmResampleRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSaveParallel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSaveParallel.Designer.cs">
+      <DependentUpon>frmSaveParallel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSetNullValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSetNullValue.Designer.cs">
+      <DependentUpon>frmSetNullValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSplitPoly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSplitPoly.Designer.cs">
+      <DependentUpon>frmSplitPoly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmTasseledCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmTasseledCap.Designer.cs">
+      <DependentUpon>frmTasseledCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmLocalRescaleAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmLocalRescaleAnalysis.Designer.cs">
+      <DependentUpon>frmLocalRescaleAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmTiledMosaic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmTiledMosaic.Designer.cs">
+      <DependentUpon>frmTiledMosaic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmTransportationCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmTransportationCost.Designer.cs">
+      <DependentUpon>frmTransportationCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmBootstrap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmBootstrap.Designer.cs">
+      <DependentUpon>frmBootstrap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmSampleIntensity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmSampleIntensity.Designer.cs">
+      <DependentUpon>frmSampleIntensity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmChart.Designer.cs">
+      <DependentUpon>frmChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmCompareClassifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmCompareClassifications.Designer.cs">
+      <DependentUpon>frmCompareClassifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmGlm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmGlm.Designer.cs">
+      <DependentUpon>frmGlm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmSummarizeByField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmSummarizeByField.Designer.cs">
+      <DependentUpon>frmSummarizeByField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmSummarizeRelatedTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmSummarizeRelatedTable.Designer.cs">
+      <DependentUpon>frmSummarizeRelatedTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmWeightedAverageByAreaOrLength.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmWeightedAverageByAreaOrLength.Designer.cs">
+      <DependentUpon>frmWeightedAverageByAreaOrLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FunctionRasters\clipFunctionArgument.cs" />
+    <Compile Include="FunctionRasters\clipFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\clusterFunctionBinaryDataset.cs" />
+    <Compile Include="FunctionRasters\clusterFunctionGaussianDataset.cs" />
+    <Compile Include="FunctionRasters\combineFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\combineFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\convertPixelTypeFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\convertPixelTypeFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\ExtractModelRangeFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\ExtractModelRangeFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\focalBandFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\focalBandFunctionDatasetBase.cs" />
+    <Compile Include="FunctionRasters\focalBandFunctionDatasetMean.cs" />
+    <Compile Include="FunctionRasters\focalBandFunctionDatasetStd.cs" />
+    <Compile Include="FunctionRasters\focalBandFunctionDatasetSum.cs" />
+    <Compile Include="FunctionRasters\glmFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\glmFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\kdaFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\kdaFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\ldaFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\ldaFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localPrctileDataset.cs" />
+    <Compile Include="FunctionRasters\LocalRescaleFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\localRescaleFunctionBase.cs" />
+    <Compile Include="FunctionRasters\meanShiftFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\meanShiftFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\pairedttestFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\pairedttestFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\PixelBlockToRasterFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\PixelBlockToRasterFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\regionGroupFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\regionGroupFunctionDataset.cs" />
+    <Compile Include="fusionIntegration.cs" />
+    <Compile Include="normalization.cs" />
+    <Compile Include="photoAnalysis.cs" />
+    <Compile Include="sampleANR.cs" />
+    <Compile Include="SampleSimulation.cs" />
+    <Compile Include="segmentation.cs" />
+    <Compile Include="Statistics\dataPrepClusterBase.cs" />
+    <Compile Include="Statistics\dataPrepClusterBinary.cs" />
+    <Compile Include="Statistics\dataPrepClusterGaussian.cs" />
+    <Compile Include="Statistics\dataPrepCompareClassifications.cs" />
+    <Compile Include="Statistics\dataPrepCompareSamples.cs" />
+    <Compile Include="Statistics\dataPrepDiscriminantAnalysis.cs" />
+    <Compile Include="Statistics\dataPrepDiscriminantAnalysisLda.cs" />
+    <Compile Include="Statistics\dataPrepGlm.cs" />
+    <Compile Include="Statistics\dataPrepPairedTTest.cs" />
+    <Compile Include="featureUtil.cs" />
+    <Compile Include="fiaIntegration.cs" />
+    <Compile Include="Forms\FIA\frmFiaBiomass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FIA\frmFiaBiomass.Designer.cs">
+      <DependentUpon>frmFiaBiomass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptFuels\frmSummarizeGraphSedimentByArivalTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OptFuels\frmSummarizeGraphSedimentByArivalTime.Designer.cs">
+      <DependentUpon>frmSummarizeGraphSedimentByArivalTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptFuels\graphSedimentByArivalTime.cs" />
+    <Compile Include="Forms\RasterAnalysis\frmAggregationRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmAggregationRaster.Designer.cs">
+      <DependentUpon>frmAggregationRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmArithmeticRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmArithmeticRaster.Designer.cs">
+      <DependentUpon>frmArithmeticRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmBatchProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmBatchProcess.Designer.cs">
+      <DependentUpon>frmBatchProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmCalculateStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmCalculateStatistics.Designer.cs">
+      <DependentUpon>frmCalculateStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmClipRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmClipRaster.Designer.cs">
+      <DependentUpon>frmClipRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmCompositeRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmCompositeRaster.Designer.cs">
+      <DependentUpon>frmCompositeRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmConditionalRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmConditionalRaster.Designer.cs">
+      <DependentUpon>frmConditionalRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmConvertPixelType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmConvertPixelType.Designer.cs">
+      <DependentUpon>frmConvertPixelType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmConvolutionRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmConvolutionRaster.Designer.cs">
+      <DependentUpon>frmConvolutionRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmCreateConstant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmCreateConstant.Designer.cs">
+      <DependentUpon>frmCreateConstant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmCreateMerge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmCreateMerge.Designer.cs">
+      <DependentUpon>frmCreateMerge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmCreateMosaic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmCreateMosaic.Designer.cs">
+      <DependentUpon>frmCreateMosaic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmExtractBand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmExtractBand.Designer.cs">
+      <DependentUpon>frmExtractBand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmFlipRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmFlipRaster.Designer.cs">
+      <DependentUpon>frmFlipRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmFocalSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmFocalSample.Designer.cs">
+      <DependentUpon>frmFocalSample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmFunctionalModeling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmFunctionalModeling.Designer.cs">
+      <DependentUpon>frmFunctionalModeling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmLinearTransform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmLinearTransform.Designer.cs">
+      <DependentUpon>frmLinearTransform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmLogicalRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmLogicalRaster.Designer.cs">
+      <DependentUpon>frmLogicalRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmMathRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmMathRaster.Designer.cs">
+      <DependentUpon>frmMathRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmNullToValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmNullToValue.Designer.cs">
+      <DependentUpon>frmNullToValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmRegionGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmRegionGroup.Designer.cs">
+      <DependentUpon>frmRegionGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmRemapRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmRemapRaster.Designer.cs">
+      <DependentUpon>frmRemapRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmRescaleRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmRescaleRaster.Designer.cs">
+      <DependentUpon>frmRescaleRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmRotateRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmRotateRaster.Designer.cs">
+      <DependentUpon>frmRotateRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSaveRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSaveRaster.Designer.cs">
+      <DependentUpon>frmSaveRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSetNull.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSetNull.Designer.cs">
+      <DependentUpon>frmSetNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSetupToolbar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSetupToolbar.Designer.cs">
+      <DependentUpon>frmSetupToolbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmShiftRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmShiftRaster.Designer.cs">
+      <DependentUpon>frmShiftRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSummarizeRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmSummarizeRaster.Designer.cs">
+      <DependentUpon>frmSummarizeRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmZonalStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmZonalStats.Designer.cs">
+      <DependentUpon>frmZonalStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmClusterSampleRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmClusterSampleRaster.Designer.cs">
+      <DependentUpon>frmClusterSampleRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmExplodeSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmExplodeSample.Designer.cs">
+      <DependentUpon>frmExplodeSample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmExportSampleToCsv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmExportSampleToCsv.Designer.cs">
+      <DependentUpon>frmExportSampleToCsv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmSelectSamplesFromTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmSelectSamplesFromTable.Designer.cs">
+      <DependentUpon>frmSelectSamplesFromTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmAccuracyAssessment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmAccuracyAssessment.Designer.cs">
+      <DependentUpon>frmAccuracyAssessment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmAdjustAccuracyAssessment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmAdjustAccuracyAssessment.Designer.cs">
+      <DependentUpon>frmAdjustAccuracyAssessment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmCluster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmCluster.Designer.cs">
+      <DependentUpon>frmCluster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmCompareSampleToPopulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmCompareSampleToPopulation.Designer.cs">
+      <DependentUpon>frmCompareSampleToPopulation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmFormatZoneData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmFormatZoneData.Designer.cs">
+      <DependentUpon>frmFormatZoneData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmLinearRegressionRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmLinearRegressionRaster.Designer.cs">
+      <DependentUpon>frmLinearRegressionRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptFuels\frmLandfireSegmentation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OptFuels\frmLandfireSegmentation.Designer.cs">
+      <DependentUpon>frmLandfireSegmentation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmLogisticRegression.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmLogisticRegression.Designer.cs">
+      <DependentUpon>frmLogisticRegression.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmMultivariateLinearRegression.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmMultivariateLinearRegression.Designer.cs">
+      <DependentUpon>frmMultivariateLinearRegression.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmPcaAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmPcaAnalysis.Designer.cs">
+      <DependentUpon>frmPcaAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmPredictNewData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmPredictNewData.Designer.cs">
+      <DependentUpon>frmPredictNewData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmRandomForest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmRandomForest.Designer.cs">
+      <DependentUpon>frmRandomForest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmRasterFromModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmRasterFromModel.Designer.cs">
+      <DependentUpon>frmRasterFromModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmSoftMaxNnet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmSoftMaxNnet.Designer.cs">
+      <DependentUpon>frmSoftMaxNnet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmStratifiedVarCov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmStratifiedVarCov.Designer.cs">
+      <DependentUpon>frmStratifiedVarCov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmTTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmTTest.Designer.cs">
+      <DependentUpon>frmTTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmVarCovCorr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmVarCovCorr.Designer.cs">
+      <DependentUpon>frmVarCovCorr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmViewModelSampleSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmViewModelSampleSize.Designer.cs">
+      <DependentUpon>frmViewModelSampleSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Texture\frmCreateGlcmSurface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Texture\frmCreateGlcmSurface.Designer.cs">
+      <DependentUpon>frmCreateGlcmSurface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MapServices\frmAddProjectLayers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MapServices\frmAddProjectLayers.designer.cs">
+      <DependentUpon>frmAddProjectLayers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MapServices\frmInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MapServices\frmInputBox.designer.cs">
+      <DependentUpon>frmInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MapServices\frmMapServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MapServices\frmMapServices.designer.cs">
+      <DependentUpon>frmMapServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MapServices\frmTileImageServiceLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MapServices\frmTileImageServiceLayer.Designer.cs">
+      <DependentUpon>frmTileImageServiceLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RunningProcess\frmRunningProcessDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RunningProcess\frmRunningProcessDialog.designer.cs">
+      <DependentUpon>frmRunningProcessDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmCreateRandomSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmCreateRandomSample.Designer.cs">
+      <DependentUpon>frmCreateRandomSample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmSampleRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sampling\frmSampleRaster.Designer.cs">
+      <DependentUpon>frmSampleRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stats\frmPolytomousLogisticRegression.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats\frmPolytomousLogisticRegression.Designer.cs">
+      <DependentUpon>frmPolytomousLogisticRegression.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmFocalAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RasterAnalysis\frmFocalAnalysis.Designer.cs">
+      <DependentUpon>frmFocalAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Texture\frmLandscapeMetrics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Texture\frmLandscapeMetrics.Designer.cs">
+      <DependentUpon>frmLandscapeMetrics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="functionModel.cs" />
+    <Compile Include="FunctionRasters\acosFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\aggregationFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\aggregationFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\asinFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\atanFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\clusterFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\clusterFunctionKmeanDataset.cs" />
+    <Compile Include="FunctionRasters\conditionalFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\cosFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\absFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\exp10FunctionDataset.cs" />
+    <Compile Include="FunctionRasters\expFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\conditionalFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\focalFunctionDatasetBase.cs" />
+    <Compile Include="FunctionRasters\focalSampleArguments.cs" />
+    <Compile Include="FunctionRasters\focalSampleDataset.cs" />
+    <Compile Include="FunctionRasters\glcmFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\glcmFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\LandscapeFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\landscapeFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localAsmFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localFunctionBase.cs" />
+    <Compile Include="FunctionRasters\mergeFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\mergeFunctionDatasetBase.cs" />
+    <Compile Include="FunctionRasters\mergeFunctionDatasetFirst.cs" />
+    <Compile Include="FunctionRasters\mergeFunctionDatasetLast.cs" />
+    <Compile Include="FunctionRasters\mergeFunctionDatasetMax.cs" />
+    <Compile Include="FunctionRasters\mergeFunctionDatasetMean.cs" />
+    <Compile Include="FunctionRasters\mergeFunctionDatasetMin.cs" />
+    <Compile Include="FunctionRasters\mosaicFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\mosaicFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\aggregationHelperASM.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\aggregationHelperEntropy.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\aggregationHelperMax.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\aggregationHelperMean.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\aggregationHelperMedian.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\aggregationHelperMin.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\aggregationHelperMode.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\aggregationHelperStd.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\aggregationHelperSum.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\aggregationHelperUnique.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\aggregationHelperVar.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\blockHelperStats.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalHelperEntropy.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalHelperMax.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalHelperMean.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalHelperMedian.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalHelperMin.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalHelperMode.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalHelperProbability.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalHelperSum.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalHelperUnique.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalHelperVariance.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalHelperStd.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalSampleHelperASM.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalSampleHelperEntropy.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalSampleHelperMax.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalSampleHelperMean.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalSampleHelperMedian.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalSampleHelperMin.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalSampleHelperMode.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalSampleHelperStd.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalSampleHelperSum.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalSampleHelperUnique.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\focalSampleHelperVariance.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperASM.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperBase.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperContrast.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperCorrelation.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperCovariance.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperDissimilarity.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperEnergy.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperEntropy.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperHomogeneity.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperMaxProb.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperMean.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperMinProb.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperRange.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\glcmHelperVariance.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeMeanRatioRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeMedianRatioRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeMinRatioRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\findUniqueRegions.cs" />
+    <Compile Include="FunctionRasters\FocalFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\localDividFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localEntropyFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\LocalFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\localMaxBandFunction.cs" />
+    <Compile Include="FunctionRasters\localMaxFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localMeanFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localMedianFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localMinBandFunction.cs" />
+    <Compile Include="FunctionRasters\localMinFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localModeFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localMultiplyFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localPowFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localStandardDeviation.cs" />
+    <Compile Include="FunctionRasters\localSubtractFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localSumFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localUniqueValuesFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\localVarianceFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\MathFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\mathFunctionBase.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeEntropyEdgeRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeEntropyRatioRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeMaxEdgeRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeMaxRatioRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeMeanAreaRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeMeanEdgeRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeMedianAreaRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeEntropyAreaRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeMedianEdgeRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeMinAreaRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeMinEdgeRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeModeAreaRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeModeEdgeRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeModeRatioRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeProbabilityAreaRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeProbabilityEdgeRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeProbabilityRatioRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeRectangleBase.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeStdAreaRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeStdEdgeRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeStdRatioRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeSumAreaRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeSumEdgeRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeSumRatioRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeUniqueAreaRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeUniqueEdgeRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeUniqueRatioRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeUniqueRegionsRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeVarianceAreaRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeVarianceEdgeRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeVarianceRatioRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\neighborhoodHelperLandscapeMaxAreaRectangle.cs" />
+    <Compile Include="FunctionRasters\NeighborhoodHelper\regionGroup.cs" />
+    <Compile Include="FunctionRasters\nullToValueFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\nullToValueFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\pcaArguments.cs" />
+    <Compile Include="FunctionRasters\pcaDataset.cs" />
+    <Compile Include="FunctionRasters\polytomousLogisticFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\polytomousLogisticFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\softMaxFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\softMaxFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\radiansFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\randomForestArguments.cs" />
+    <Compile Include="FunctionRasters\randomForestDataset.cs" />
+    <Compile Include="FunctionRasters\regressionFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\regressionFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\sinFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\log10FunctionDataset.cs" />
+    <Compile Include="FunctionRasters\logFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\sqrtFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\squaredFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\tanFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\tobitFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\tobitFunctionDataset.cs" />
+    <Compile Include="FunctionRasters\ttestFunctionArguments.cs" />
+    <Compile Include="FunctionRasters\zonalHelper.cs" />
+    <Compile Include="geodatabaseutility.cs" />
+    <Compile Include="geoprocessor.cs" />
+    <Compile Include="help.cs" />
+    <Compile Include="imageAnalysisUtil.cs" />
+    <Compile Include="Forms\OptFuels\landFire.cs" />
+    <Compile Include="mapserviceutility.cs" />
+    <Compile Include="msofficeHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="rasterUtil.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Statistics\dataPrepAdjustAccuracyAssessment.cs" />
+    <Compile Include="Statistics\dataPrepClusterKmean.cs" />
+    <Compile Include="Statistics\dataPrepCompareVarCov.cs" />
+    <Compile Include="Statistics\dataPrepLogisticRegression.cs" />
+    <Compile Include="Statistics\dataPrepMultivariateLinearRegression.cs" />
+    <Compile Include="Statistics\dataPrepPrincipleComponents.cs" />
+    <Compile Include="Statistics\dataPrepSampleSize.cs" />
+    <Compile Include="Statistics\dataPrepStrata.cs" />
+    <Compile Include="Statistics\dataPrepSvm.cs" />
+    <Compile Include="Statistics\dataPrepSvmReg.cs" />
+    <Compile Include="Statistics\dataPrepTTest.cs" />
+    <Compile Include="Statistics\dataPrepVarCovCorr.cs" />
+    <Compile Include="Statistics\ModelHelper.cs" />
+    <Compile Include="Statistics\dataGeneralConfusionMatirx.cs" />
+    <Compile Include="Statistics\dataPrepBase.cs" />
+    <Compile Include="Statistics\dataPrepLinearReg.cs" />
+    <Compile Include="Statistics\dataPrepMultinomialLogisticRegression.cs" />
+    <Compile Include="Statistics\dataPrepSoftMaxPlr.cs" />
+    <Compile Include="Statistics\dataPrepRandomForest.cs" />
+    <Compile Include="FunctionRasters\ttestFunctionDataset.cs" />
+    <Compile Include="TransRouting.cs" />
+    <Compile Include="update.cs" />
+    <Compile Include="viewutility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FIA\frmFiaBiomass.resx">
+      <DependentUpon>frmFiaBiomass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FIA\frmFiaSummarizePoly.resx">
+      <DependentUpon>frmFiaSummarizePoly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FIA\frmGroupSpecies.resx">
+      <DependentUpon>frmGroupSpecies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAttributeQuery.resx">
+      <DependentUpon>frmAttributeQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmNecCdfAttributeSelection.resx">
+      <DependentUpon>FrmNecCdfAttributeSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lidar\frmCalcCloudMetrics.resx">
+      <DependentUpon>frmCalcCloudMetrics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lidar\frmCalcGridMetricsFusion.resx">
+      <DependentUpon>frmCalcGridMetricsFusion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lidar\frmConvertGridMetricsToRaster.resx">
+      <DependentUpon>frmConvertGridMetricsToRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lidar\frmCreateDtmFiles.resx">
+      <DependentUpon>frmCreateDtmFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lidar\frmFilterLas.resx">
+      <DependentUpon>frmFilterLas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lidar\frmRemoveSpaces.resx">
+      <DependentUpon>frmRemoveSpaces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MapServices\frmAddProjectLayers.resx">
+      <DependentUpon>frmAddProjectLayers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MapServices\frmDownloadMapServiceLayer.resx">
+      <DependentUpon>frmDownloadMapServiceLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MapServices\frmInputBox.resx">
+      <DependentUpon>frmInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MapServices\frmMapServices.resx">
+      <DependentUpon>frmMapServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MapServices\frmTileImageServiceLayer.resx">
+      <DependentUpon>frmTileImageServiceLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptFuels\frmSummarizeGraphSedimentByArivalTime.resx">
+      <DependentUpon>frmSummarizeGraphSedimentByArivalTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmAggregationRaster.resx">
+      <DependentUpon>frmAggregationRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmArithmeticRaster.resx">
+      <DependentUpon>frmArithmeticRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmBatchProcess.resx">
+      <DependentUpon>frmBatchProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmCalculateStatistics.resx">
+      <DependentUpon>frmCalculateStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmClipRaster.resx">
+      <DependentUpon>frmClipRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmCompositeRaster.resx">
+      <DependentUpon>frmCompositeRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmConditionalRaster.resx">
+      <DependentUpon>frmConditionalRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmConvertPixelType.resx">
+      <DependentUpon>frmConvertPixelType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmConvolutionRaster.resx">
+      <DependentUpon>frmConvolutionRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmCreateAttributeTable.resx">
+      <DependentUpon>frmCreateAttributeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmCreateConstant.resx">
+      <DependentUpon>frmCreateConstant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmCreateMerge.resx">
+      <DependentUpon>frmCreateMerge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmCreateMosaic.resx">
+      <DependentUpon>frmCreateMosaic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmExtractBand.resx">
+      <DependentUpon>frmExtractBand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmFlipRaster.resx">
+      <DependentUpon>frmFlipRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmFocalAnalysis.resx">
+      <DependentUpon>frmFocalAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmFocalSample.resx">
+      <DependentUpon>frmFocalSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmFunctionalModeling.resx">
+      <DependentUpon>frmFunctionalModeling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmLinearTransform.resx">
+      <DependentUpon>frmLinearTransform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmLocalBinTimeRaster.resx">
+      <DependentUpon>frmLocalBinTimeRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmLogicalRaster.resx">
+      <DependentUpon>frmLogicalRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmMathRaster.resx">
+      <DependentUpon>frmMathRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmNDVIRaster.resx">
+      <DependentUpon>frmNDVIRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmNormalize.resx">
+      <DependentUpon>frmNormalize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmNullToValue.resx">
+      <DependentUpon>frmNullToValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmPhotoAnalysis.resx">
+      <DependentUpon>frmPhotoAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmRegionGroup.resx">
+      <DependentUpon>frmRegionGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmRemapRaster.resx">
+      <DependentUpon>frmRemapRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmResampleRaster.resx">
+      <DependentUpon>frmResampleRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmRescaleRaster.resx">
+      <DependentUpon>frmRescaleRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmRotateRaster.resx">
+      <DependentUpon>frmRotateRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmRunBatchInParallel.resx">
+      <DependentUpon>frmRunBatchInParallel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmSaveParallel.resx">
+      <DependentUpon>frmSaveParallel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmSaveRaster.resx">
+      <DependentUpon>frmSaveRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmSetNull.resx">
+      <DependentUpon>frmSetNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmSetNullValue.resx">
+      <DependentUpon>frmSetNullValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmSetStatistics.resx">
+      <DependentUpon>frmSetStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmSetupToolbar.resx">
+      <DependentUpon>frmSetupToolbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmShiftRaster.resx">
+      <DependentUpon>frmShiftRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmSplitPoly.resx">
+      <DependentUpon>frmSplitPoly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmSummarizeRaster.resx">
+      <DependentUpon>frmSummarizeRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmTasseledCap.resx">
+      <DependentUpon>frmTasseledCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmTiledMosaic.resx">
+      <DependentUpon>frmTiledMosaic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmTransportationCost.resx">
+      <DependentUpon>frmTransportationCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmZonalStats.resx">
+      <DependentUpon>frmZonalStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RasterAnalysis\frmLocalRescaleAnalysis.resx">
+      <DependentUpon>frmLocalRescaleAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RunningProcess\frmRunningProcessDialog.resx">
+      <DependentUpon>frmRunningProcessDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sampling\frmBootstrap.resx">
+      <DependentUpon>frmBootstrap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sampling\frmClusterSampleRaster.resx">
+      <DependentUpon>frmClusterSampleRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sampling\frmCreateRandomSample.resx">
+      <DependentUpon>frmCreateRandomSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sampling\frmExplodeSample.resx">
+      <DependentUpon>frmExplodeSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sampling\frmExportSampleToCsv.resx">
+      <DependentUpon>frmExportSampleToCsv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sampling\frmSampleIntensity.resx">
+      <DependentUpon>frmSampleIntensity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sampling\frmSampleRaster.resx">
+      <DependentUpon>frmSampleRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sampling\frmSelectSamplesFromTable.resx">
+      <DependentUpon>frmSelectSamplesFromTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmAccuracyAssessment.resx">
+      <DependentUpon>frmAccuracyAssessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmAdjustAccuracyAssessment.resx">
+      <DependentUpon>frmAdjustAccuracyAssessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmCluster.resx">
+      <DependentUpon>frmCluster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmCompareClassifications.resx">
+      <DependentUpon>frmCompareClassifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmCompareSampleToPopulation.resx">
+      <DependentUpon>frmCompareSampleToPopulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmFormatZoneData.resx">
+      <DependentUpon>frmFormatZoneData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmChart.resx">
+      <DependentUpon>frmChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmGlm.resx">
+      <DependentUpon>frmGlm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmLogisticRegression.resx">
+      <DependentUpon>frmLogisticRegression.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmMultivariateLinearRegression.resx">
+      <DependentUpon>frmMultivariateLinearRegression.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmPcaAnalysis.resx">
+      <DependentUpon>frmPcaAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmPolytomousLogisticRegression.resx">
+      <DependentUpon>frmPolytomousLogisticRegression.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmLinearRegressionRaster.resx">
+      <DependentUpon>frmLinearRegressionRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptFuels\frmLandfireSegmentation.resx">
+      <DependentUpon>frmLandfireSegmentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmPredictNewData.resx">
+      <DependentUpon>frmPredictNewData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmRandomForest.resx">
+      <DependentUpon>frmRandomForest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmRasterFromModel.resx">
+      <DependentUpon>frmRasterFromModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmSoftMaxNnet.resx">
+      <DependentUpon>frmSoftMaxNnet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmStratifiedVarCov.resx">
+      <DependentUpon>frmStratifiedVarCov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmSummarizeByField.resx">
+      <DependentUpon>frmSummarizeByField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmSummarizeRelatedTable.resx">
+      <DependentUpon>frmSummarizeRelatedTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmTTest.resx">
+      <DependentUpon>frmTTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmVarCovCorr.resx">
+      <DependentUpon>frmVarCovCorr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmViewModelSampleSize.resx">
+      <DependentUpon>frmViewModelSampleSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats\frmWeightedAverageByAreaOrLength.resx">
+      <DependentUpon>frmWeightedAverageByAreaOrLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Texture\frmCreateGlcmSurface.resx">
+      <DependentUpon>frmCreateGlcmSurface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Texture\frmLandscapeMetrics.resx">
+      <DependentUpon>frmLandscapeMetrics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Segmentation\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libraries\Accord.dll" />
+    <Content Include="Libraries\Accord.MachineLearning.dll" />
+    <Content Include="Libraries\Accord.MachineLearning.GPL.dll" />
+    <Content Include="Libraries\Accord.Math.dll" />
+    <Content Include="Libraries\Accord.Neuro.dll" />
+    <Content Include="Libraries\Accord.Statistics.dll" />
+    <Content Include="Libraries\AForge.dll" />
+    <Content Include="Libraries\AForge.Genetic.dll" />
+    <Content Include="Libraries\AForge.Math.dll" />
+    <Content Include="Libraries\AForge.Neuro.dll" />
+    <Content Include="Libraries\alglibnet2.dll" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Help\HTML\DeleteFunctionModel.htm" />
+    <None Include="Help\HTML\Help.htm" />
+    <None Include="Help\HTML\OpenFunctionModelForm.htm" />
+    <None Include="Help\HTML\RasterAnalysisMenu.htm" />
+    <None Include="Help\HTML\RmrsRasterUtilitiesToolbar.htm" />
+    <None Include="Help\HTML\SamplingMenu.htm" />
+    <None Include="Help\HTML\SaveRasterForm.htm" />
+    <None Include="Help\HTML\StatisticalModeling.htm" />
+    <None Include="Help\HTML\WebServicesMenu.htm" />
+    <Content Include="gpl2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="gpl3.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Help\HTML\accuracyAssessmentForm.htm" />
+    <Content Include="Help\HTML\addArcgisConnectionForm.htm" />
+    <Content Include="Help\HTML\addFeatureClassForm.htm" />
+    <Content Include="Help\HTML\addRasterToMapForm.htm" />
+    <Content Include="Help\HTML\arithmeticAnalysisForm.htm" />
+    <Content Include="Help\HTML\calculateRasterStatistics.htm" />
+    <Content Include="Help\HTML\clipRasterForm.htm" />
+    <Content Include="Help\HTML\clusterSampleRasterForm.htm" />
+    <Content Include="Help\HTML\conditionalAnalysisForm.htm" />
+    <Content Include="Help\HTML\convertPixelTypeForm.htm" />
+    <Content Include="Help\HTML\convolutionAnalysisForm.htm" />
+    <Content Include="Help\HTML\createCompositeForm.htm" />
+    <Content Include="Help\HTML\createMosaicForm.htm" />
+    <Content Include="Help\HTML\functionModelForm.htm" />
+    <Content Include="Help\HTML\glcmForm.htm" />
+    <Content Include="Help\HTML\landscapeMetricsForm.htm" />
+    <Content Include="Help\HTML\mergeRasterForm.htm" />
+    <Content Include="Help\HTML\downloadServicesForm.htm" />
+    <Content Include="Help\HTML\explodeForm.htm" />
+    <Content Include="Help\HTML\exportToCsvForm.htm" />
+    <Content Include="Help\HTML\extractRasterBandsForm.htm" />
+    <Content Include="Help\HTML\fiaSummarizedBiomassForm.htm" />
+    <Content Include="Help\HTML\focalAnalyses.htm" />
+    <Content Include="Help\HTML\focalAnalysisForm.htm" />
+    <Content Include="Help\HTML\FunctionDatasets.htm" />
+    <Content Include="Help\HTML\FunctionModeling.htm" />
+    <Content Include="Help\HTML\GLCM.htm" />
+    <Content Include="Help\HTML\LandScapeMetrics.htm" />
+    <Content Include="Help\HTML\linearTransformForm.htm" />
+    <Content Include="Help\HTML\localStatsAnalysisForm.htm" />
+    <Content Include="Help\HTML\logicalAnalysisForm.htm" />
+    <Content Include="Help\HTML\mathTransformationForm.htm" />
+    <Content Include="Help\HTML\modelPlrForm.htm" />
+    <Content Include="Help\HTML\modelRegressionForm.htm" />
+    <Content Include="Help\HTML\randomSampleForm.htm" />
+    <Content Include="Help\HTML\remapRasterForm.htm" />
+    <Content Include="Help\HTML\rescaleRasterForm.htm" />
+    <Content Include="Help\HTML\runPlrClassification.htm" />
+    <Content Include="Help\HTML\runRegressionModel.htm" />
+    <Content Include="Help\HTML\sampleGlcmForm.htm" />
+    <Content Include="Help\HTML\sampleRasterForm.htm" />
+    <Content Include="Help\HTML\setupServicesForm.htm" />
+    <Content Include="Help\HTML\stratifiedRandomSampleForm.htm" />
+    <Content Include="Help\HTML\tiledImageServicesForm.htm" />
+    <Content Include="Help\images\accuracyAssessment.gif" />
+    <Content Include="Help\images\accuracyAssessmentForm.gif" />
+    <Content Include="Help\images\addFeatureForm.gif" />
+    <Content Include="Help\images\addFunctionModelForm.gif" />
+    <Content Include="Help\images\addRasterForm.gif" />
+    <Content Include="Help\images\arithmeticAnalysisForm.gif" />
+    <Content Include="Help\images\arithmeticMultiply.png" />
+    <Content Include="Help\images\arithmeticMultiplyMultiBandConstant.png" />
+    <Content Include="Help\images\arithmeticPlus.png" />
+    <Content Include="Help\images\calculateRasterStatisticsForm.gif" />
+    <Content Include="Help\images\clip.png" />
+    <Content Include="Help\images\clipRasterForm.gif" />
+    <Content Include="Help\images\cmdAddLayer.gif" />
+    <Content Include="Help\images\cmdAddRaster.gif" />
+    <Content Include="Help\images\commandAccuracyAssessment.gif" />
+    <Content Include="Help\images\commandAddFunctionModelToMap.gif" />
+    <Content Include="Help\images\commandAddTiledImageServer.gif" />
+    <Content Include="Help\images\commandArithmeticRaster.gif" />
+    <Content Include="Help\images\commandCalculateRasterStatistics.gif" />
+    <Content Include="Help\images\commandClipRaster.gif" />
+    <Content Include="Help\images\commandCompositeRaster.gif" />
+    <Content Include="Help\images\commandConditionalRaster.gif" />
+    <Content Include="Help\images\commandConvertPixelTypes.gif" />
+    <Content Include="Help\images\commandConvolutionRaster.gif" />
+    <Content Include="Help\images\commandCreateGLCM.gif" />
+    <Content Include="Help\images\commandCreateMerge.gif" />
+    <Content Include="Help\images\commandCreateMosaic.gif" />
+    <Content Include="Help\images\commandDeleteFunctionModel.gif" />
+    <Content Include="Help\images\commandExplodeSample.gif" />
+    <Content Include="Help\images\commandExportToCsv.gif" />
+    <Content Include="Help\images\commandExtractRasterBands.gif" />
+    <Content Include="Help\images\commandFIABiomassSummary.gif" />
+    <Content Include="Help\images\commandFocalAnalysis.gif" />
+    <Content Include="Help\images\commandFunctionalModeling.gif" />
+    <Content Include="Help\images\commandHelp.gif" />
+    <Content Include="Help\images\commandLandfireSegmentation.gif" />
+    <Content Include="Help\images\commandLandscapeMetrics.gif" />
+    <Content Include="Help\images\commandLinearTransformRaster.gif" />
+    <Content Include="Help\images\commandLoad.gif" />
+    <Content Include="Help\images\commandLogicalAnalysis.gif" />
+    <Content Include="Help\images\commandMathRaster.gif" />
+    <Content Include="Help\images\commandPlrClassification.gif" />
+    <Content Include="Help\images\commandPlrModel.gif" />
+    <Content Include="Help\images\commandRandomSample.gif" />
+    <Content Include="Help\images\commandRegModel.gif" />
+    <Content Include="Help\images\commandRegRun.gif" />
+    <Content Include="Help\images\commandRemap.gif" />
+    <Content Include="Help\images\commandRescaleRaster.gif" />
+    <Content Include="Help\images\commandSampleGLCM.gif" />
+    <Content Include="Help\images\commandSampleRaster.gif" />
+    <Content Include="Help\images\commandSampleRasterCluster.gif" />
+    <Content Include="Help\images\commandSaveRaster.gif" />
+    <Content Include="Help\images\commandSedByArival.gif" />
+    <Content Include="Help\images\commandServiceSetup.gif" />
+    <Content Include="Help\images\commandStratifiedRandomSample.gif" />
+    <Content Include="Help\images\commandSummarizeRaster.gif" />
+    <Content Include="Help\images\commandVersion.gif" />
+    <Content Include="Help\images\commandWebSite.gif" />
+    <Content Include="Help\images\conditional.png" />
+    <Content Include="Help\images\conditionalAnalysisForm.gif" />
+    <Content Include="Help\images\convertPixelTypeForm.gif" />
+    <Content Include="Help\images\convolutionKernel.png" />
+    <Content Include="Help\images\createRandomSampleForm.gif" />
+    <Content Include="Help\images\createStratifiedRandomSampleForm.gif" />
+    <Content Include="Help\images\deleteFunctionModelForm.gif" />
+    <Content Include="Help\images\erase.png" />
+    <Content Include="Help\images\explodeSampleForm.gif" />
+    <Content Include="Help\images\exportToCsvForm.gif" />
+    <Content Include="Help\images\fiaBiomassSummaryForm.gif" />
+    <Content Include="Help\images\focalAnalysisForm.gif" />
+    <Content Include="Help\images\focalEntropy3by3.png" />
+    <Content Include="Help\images\focalStatisticsEquations.png" />
+    <Content Include="Help\images\focalSTD3by3.png" />
+    <Content Include="Help\images\focalSum3by3.png" />
+    <Content Include="Help\images\functionModelConcept.gif" />
+    <Content Include="Help\images\gettingData.gif" />
+    <Content Include="Help\images\GLCMequations.png" />
+    <Content Include="Help\images\GLCMmatrix.png" />
+    <Content Include="Help\images\GLCMpicture.png" />
+    <Content Include="Help\images\humanDeminsions.gif" />
+    <Content Include="Help\images\ImageAnalysisWindow.gif" />
+    <Content Include="Help\images\landscapeMetricsForm.gif" />
+    <Content Include="Help\images\linearTransform.png" />
+    <Content Include="Help\images\linearTransformForm.gif" />
+    <Content Include="Help\images\localStatsAnalysisForm.gif" />
+    <Content Include="Help\images\localStatsMax.png" />
+    <Content Include="Help\images\localStatsMaxBand.png" />
+    <Content Include="Help\images\localStatsSum.png" />
+    <Content Include="Help\images\logicalAnalysisForm.gif" />
+    <Content Include="Help\images\logicalAnd.png" />
+    <Content Include="Help\images\logicalgr.png" />
+    <Content Include="Help\images\logicalLessEqual.png" />
+    <Content Include="Help\images\mathTransformationForm.gif" />
+    <Content Include="Help\images\merge.png" />
+    <Content Include="Help\images\modelPLRForm.gif" />
+    <Content Include="Help\images\modelRegressionForm.gif" />
+    <Content Include="Help\images\NAIPpicture.png" />
+    <Content Include="Help\images\newServiceConnection.gif" />
+    <Content Include="Help\images\rasterAnalysisMenu.gif" />
+    <Content Include="Help\images\RasterOverlay.gif" />
+    <Content Include="Help\images\remapRasterForm.gif" />
+    <Content Include="Help\images\rescaleRasterForm.gif" />
+    <Content Include="Help\images\RMRS.gif" />
+    <Content Include="Help\images\rmrsToolbar.gif" />
+    <Content Include="Help\images\runPlrClassificationForm.gif" />
+    <Content Include="Help\images\runRegressionModelForm.gif" />
+    <Content Include="Help\images\sampleGlcmForm.gif" />
+    <Content Include="Help\images\sampleMenuImage.gif" />
+    <Content Include="Help\images\sampleRasterClusterForm.gif" />
+    <Content Include="Help\images\sampleRasterForm.gif" />
+    <Content Include="Help\images\saveRasterForm.gif" />
+    <Content Include="Help\images\setupServicesForm.gif" />
+    <Content Include="Help\images\statisticalModeling.gif" />
+    <Content Include="Help\images\statisticalModelingMenu.gif" />
+    <Content Include="Help\images\tiledImageDownloadForm.gif" />
+    <Content Include="Help\images\webServicesMenuImage.gif" />
+    <Content Include="Help\images\workFlow.gif" />
+    <Content Include="Icons\checkMark.bmp" />
+    <Content Include="Icons\cmdOpenProject.bmp" />
+    <Content Include="Icons\commandCreateGLCM.bmp" />
+    <Content Include="Icons\RmrsLogo.ico" />
+    <Content Include="Icons\Usfs.ico" />
+    <Content Include="Icons\UsfsLogo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties ESRIImportCache="ESRI.ArcGIS.esriSystem" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

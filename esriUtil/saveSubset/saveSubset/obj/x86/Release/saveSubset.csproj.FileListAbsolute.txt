@@ -1,0 +1,15 @@
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\bin\Release\saveSubset.exe
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\bin\Release\saveSubset.pdb
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\bin\Release\esriUtil.dll
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\bin\Release\Accord.Statistics.dll
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\bin\Release\Accord.MachineLearning.dll
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\bin\Release\alglibnet2.dll
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\bin\Release\Accord.Math.dll
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\bin\Release\Accord.MachineLearning.GPL.dll
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\bin\Release\AForge.dll
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\bin\Release\Accord.dll
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\bin\Release\AForge.Math.dll
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\bin\Release\esriUtil.pdb
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\obj\x86\Release\saveSubset.csprojResolveAssemblyReference.cache
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\obj\x86\Release\saveSubset.exe
+C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\saveSubset\saveSubset\obj\x86\Release\saveSubset.pdb
