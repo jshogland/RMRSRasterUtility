@@ -1,3 +1,0 @@
-C:\Users\jshogland\Documents\John\Projects\Code\RMRSRasterUtility\esriUtil\TestConsole\bin\Release\TestConsole.exe.config
-C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\TestConsole\obj\x86\Release\TestConsole.exe
-C:\Users\jshogland\Documents\JOHN\projects\Code\RMRSRasterUtility\esriUtil\TestConsole\obj\x86\Release\TestConsole.pdb
